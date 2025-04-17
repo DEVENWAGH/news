@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  font-family: "Roboto", "Segoe UI", Arial, sans-serif;
+  background: #f5f7fa;
+  min-height: 100vh;
+  padding-bottom: 80px; /* Ensure footer is not in view while loading */
 }
 
 .App-logo {
@@ -34,5 +38,104 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Updated styling for improved layout */
+h1,
+h2,
+.brand-title {
+  font-family: "Playfair Display", serif;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.brand-title {
+  display: block;
+  clear: both;
+  position: relative;
+  z-index: 1000;
+}
+
+body {
+  font-family: "Roboto", "Segoe UI", Arial, sans-serif;
+  background: #f5f7fa;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Improved layout container with spacing only for navbar */
+.main-container {
+  padding-top: 70px; /* Space for navbar only */
+  min-height: calc(100vh - 80px); /* Full height minus footer */
+}
+
+/* Remove site-header styling as we're using navbar only */
+.site-header {
+  display: none; /* Hide the separate header */
+}
+
+/* Navbar styling with brand visibility at top */
+.navbar {
+  position: fixed;
+  top: 0; /* Position at top */
+  left: 0;
+  right: 0;
+  z-index: 1030; /* Higher z-index to ensure it's on top */
+  padding: 0.5rem 1rem;
+}
+
+/* Make navbar brand title more prominent since it's the only header now */
+.navbar-brand.brand-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-right: 1.5rem;
+  line-height: 1.2;
+}
+
+/* Style for subtitle in navbar brand */
+.navbar-subtitle {
+  font-size: 0.7rem;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.5px;
+  font-weight: 400;
+}
+
+/* Add smooth transition for navbar toggle */
+.navbar-toggler {
+  transition: all 0.3s ease;
+  outline: none;
+  border: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+/* Make cross icon properly centered and sized */
+.navbar-toggler span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  width: 24px;
+}
+
+/* Ensure there's enough space for the two-line brand in mobile menu */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    margin-top: 0.5rem;
+  }
+}
+
+/* Hide duplicate branding on larger screens where header is visible */
+@media (min-width: 992px) {
+  .navbar .d-lg-none.brand-title {
+    display: none;
   }
 }
